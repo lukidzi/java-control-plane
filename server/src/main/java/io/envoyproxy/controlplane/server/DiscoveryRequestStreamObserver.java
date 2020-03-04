@@ -91,7 +91,7 @@ public abstract class DiscoveryRequestStreamObserver implements StreamObserver<D
           request,
           ackedResources(requestTypeUrl),
           r -> executor.execute(() -> send(r, requestTypeUrl)),
-          hasClusterChanged()
+          hasClusterChanged.get()
       ));
     }
   }
@@ -187,6 +187,4 @@ public abstract class DiscoveryRequestStreamObserver implements StreamObserver<D
   abstract void setAckedResources(String typeUrl, Set<String> resources);
 
   abstract void computeWatch(String typeUrl, Supplier<Watch> watchCreator);
-
-  abstract boolean hasClusterChanged();
 }

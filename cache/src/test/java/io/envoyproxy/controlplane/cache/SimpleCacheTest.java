@@ -448,8 +448,7 @@ public class SimpleCacheTest {
             .setTypeUrl("")
             .build(),
         Collections.emptySet(),
-        r -> {
-        });
+        r -> { });
 
     // clearSnapshot should fail and the snapshot should be left untouched
     assertThat(cache.clearSnapshot(SingleNodeGroup.GROUP)).isFalse();
@@ -475,8 +474,7 @@ public class SimpleCacheTest {
             .setTypeUrl("")
             .build(),
         Collections.emptySet(),
-        r -> {
-        });
+        r -> { });
 
     assertThat(cache.groups()).containsExactly(SingleNodeGroup.GROUP);
   }

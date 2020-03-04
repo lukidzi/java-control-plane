@@ -59,11 +59,6 @@ public class AdsDiscoveryRequestStreamObserver extends DiscoveryRequestStreamObs
   }
 
   @Override
-  public boolean hasClusterChanged() {
-    return hasClusterChanged.get();
-  }
-
-  @Override
   DiscoveryResponse latestResponse(String typeUrl) {
     return latestResponse.get(typeUrl);
   }
